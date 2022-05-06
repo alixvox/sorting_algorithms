@@ -5,7 +5,7 @@
  * @array: pointer to the array
  * @size: size of array
 */
-void merge_srt(int *array, size_t size)
+void merge_sort(int *array, size_t size)
 {
     int start = 0;
     int end = size - 1;
