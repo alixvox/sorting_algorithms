@@ -32,5 +32,8 @@ void merge_sort(int *array, size_t size);
 void mergeSort(int *array, int start, int end, int *temp_array);
 void merge(int *array, int start, int mid, int end, int *temp_array);
 void print_half(int *array, int start, int end);
+void heap_sort(int *a, size_t size);
+void heapify(int *a, int size, int p, int len);
+void swap(int *x, int *y);
 
 #endif
