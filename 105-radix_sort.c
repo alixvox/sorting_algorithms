@@ -13,39 +13,43 @@ void radix_sort(int *array, size_t size)
 {
   // Getting max element!
   int max = get_max_int(array, size);
+  int *output;
+  int *count;
+  int maxPos;
+  int i;
 
   // For loop of the radix sort (Technically a countingSort)
   for (int pos = 1; max / pos > 0; pos *= 10)
   {
-    int *output = malloc((size + 1) * sizeof(int));
+    output = malloc((size + 1) * sizeof(int));
     // Getting max number of digits
-    int maxPos = (array[0] / pos) % 10;
+    maxPos = (array[0] / pos) % 10;
 
     // Find the highest digit of the position
-    for (int i = 1; i < (int)size; i++)
+    for (i = 1; i < (int)size; i++)
       if (((array[i] / pos) % 10) > maxPos)
         maxPos = array[i];
 
     // Establishing a counter array to count number of ints in each position
-    int *count = malloc((max + 1) * sizeof(int));
-    for (int i = 0; i < maxPos; ++i)
+    count = malloc((max + 1) * sizeof(int));
+    for (i = 0; i < maxPos; ++i)
       count[i] = 0;
-    for (int i = 1; i < (int)size; i++)
+    for (i = 1; i < (int)size; i++)
       count[(array[i] / pos) % 10]++;
 
     // Cumulative count of all ints in each position
-    for (int i = 1; i < 10; i++)
+    for (i = 1; i < 10; i++)
       count[i] += count[i - 1];
 
     // Place ints in sorted order depending on position
-    for (int i = (int)size; i >= 0; i--)
+    for (i = (int)size; i >= 0; i--)
     {
       output[count[(array[i] / pos) % 10] - 1] = array[i];
       count[(array[i] / pos) % 10]--;
     }
 
     // Assign to original array
-    for (int i = 0; i < (int)size; i++)
+    for (i = 0; i < (int)size; i++)
       array[i] = output[i];
 
     // Print_array
