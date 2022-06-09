@@ -35,5 +35,7 @@ void print_half(int *array, int start, int end);
 void heap_sort(int *a, size_t size);
 void heapify(int *a, int size, int p, int len);
 void swap(int *x, int *y);
+void radix_sort(int *array, size_t size);
+int get_max_int(int *array, size_t size);
 
 #endif
