@@ -11,7 +11,6 @@
 
 void radix_sort(int *array, size_t size)
 {
-  // Getting max element!
   int max = get_max_int(array, size);
   int *output;
   int *count;
