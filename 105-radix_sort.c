@@ -44,10 +44,10 @@ void radix_sort(int *array, size_t size)
       array[i] = output[i];
 
     print_array(array, size);
-  }
 
-  free(output);
-  free(count);
+    free(output);
+    free(count);
+  }
 }
 
 /**
