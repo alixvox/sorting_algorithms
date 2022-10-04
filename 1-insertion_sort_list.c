@@ -1,5 +1,4 @@
 #include "sort.h"
-
 /**
  * insertion_sort_list - Sorts a list using insertion sort.
  * @list: The head node of the list
